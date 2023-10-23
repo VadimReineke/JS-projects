@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Клиенты</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/media.css">
+    <script type="module" src="./js/index.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            createApp(document.getElementById('main'));
+        });
+     </script>
+</head>
+<body>
+  
+    <div class="header">
+      <div class="container header__container">
+       <div class="header__wrapper">
+          <a aria-label="Логотип" href="#" class="header__logo">
+              <img src="./img/logo.png" alt="Logo">
+          </a>
+          <form id="search-form" class="search-form" action="#" method="get">
+              <input id = "search-input" class="search-form__input" type="search" placeholder="Введите запрос">
+          </form>
+       </div>
+      </div>
+  </div>
+  
+  <main id="main" class="main">
+    <div class="container main__container">
+      <h2 class="main__titel" > Клиенты</h2>
+      <section id="table">
+              <div id="table-container" class="container table-container">
+                  <table class="table-main"  cellspacing="0" cellpadding="5" >
+                      <thead>
+                        <tr>
+                          <th scope="col" class="table-id">
+                           <p class="table-id__text-color">ID</p> 
+                            <div class="arrow up"></div>
+                          </th>
+                          <th scope="col" class="table-fio">
+                            <p class="table-fio__text table-text">Фамилия Имя Отчество</p>
+                            <div class="table-fio__wrapper">
+                              <div class="col-text-color col-text-fio-up">А-Я</div>
+                              <div class="col-text-color col-text-fio-down hide">Я-А</div>
+                              <div class="arrow up"></div>
+                            </div>
+                          </th>
+                          <th scope="col" class="table-create-date">
+                            <p class="table-create-date__text table-text">Дата и время создания</p>
+                            <div class="arrow up arrow__create-date"></div>
+                          </th>
+                          <th scope="col" class="table-last-change-date">
+                            <p class="table-last-change-date__text table-text"> Последние изменения</p>
+                            <div class="arrow up arrow__change-date"></div>
+                          </th>
+                          <th scope="col" class="table-contacts">
+                            <p class="table-contacts__text table-text">Контакты</p>
+                            </th>
+                            <th scope="col" class="table-actions">
+                              <p class="table-actions__text table-text">Действия</p>
+                            </th>
+                        </tr>
+                      </thead>
+                      <tbody id="client-table-rendering" class="client-table-rendering"></tbody>
+                    </table>
+  
+                    <button class="table-add-button add-button" id="add-btn">
+                      <svg width="23" height="16" viewBox="0 0 23 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5 8C16.71 8 18.5 6.21 18.5 4C18.5 1.79 16.71 0 14.5 0C12.29 0 10.5 1.79 10.5 4C10.5 6.21 12.29 8 14.5 8ZM5.5 6V3H3.5V6H0.5V8H3.5V11H5.5V8H8.5V6H5.5ZM14.5 10C11.83 10 6.5 11.34 6.5 14V16H22.5V14C22.5 11.34 17.17 10 14.5 10Z"/>
+                        </svg>
+                        <p class="add-btn__text">Добавить клиента</p>
+                      
+                    </button>
+              </div>
+      </section> 
+    </div>
+  
+  </main>
+  
+    <div id="modal-window" class="modal flex" tabindex="-1">
+    </div>
+
+    <div id="modal-overlay" class="overlay"></div>
+</body>
+</html>
+
